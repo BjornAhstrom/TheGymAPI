@@ -10,6 +10,10 @@ public class Employee {
     private String mail;
     private String id;
 
+    public Employee() {
+
+    }
+
     public Employee(String userName, String firstName, String lastName, String adress, String phoneNumber, String mail, String id) {
         this.userName = userName;
         this.firstName = firstName;
