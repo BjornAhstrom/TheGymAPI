@@ -1,17 +1,19 @@
 package com.example.TheGym;
 
+import java.util.UUID;
+
 public class Employee {
 
+    private String id;
     private String userName;
     private String firstName;
     private String lastName;
     private String adress;
     private String phoneNumber;
     private String mail;
-    private String id;
 
     public Employee() {
-
+        this.id = UUID.randomUUID().toString().replace("-", "");
     }
 
     public Employee(String userName, String firstName, String lastName, String adress, String phoneNumber, String mail, String id) {
@@ -21,7 +23,6 @@ public class Employee {
         this.adress = adress;
         this.phoneNumber = phoneNumber;
         this.mail = mail;
-        this.id = id;
     }
 
     public String getUserName() {

@@ -12,6 +12,19 @@ public class Gym {
     GymInformation gymInfo = new GymInformation();
     ObjectMapper mapper = new ObjectMapper();
 
+    public Gym() {
+        readFromFile();
+    }
+
+    public GymInformation getGymInfo() {
+        return gymInfo;
+    }
+
+    public void patchGymInfo(GymInformation gymInformation) {
+        //Optional<GymInformation> optGymInfo =
+
+
+    }
 
     private void writeToFile() {
         try {

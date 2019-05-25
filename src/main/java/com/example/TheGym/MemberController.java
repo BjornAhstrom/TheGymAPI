@@ -28,7 +28,7 @@ public class MemberController {
         return member;
     }
 
-    @RequestMapping(value = "/members/{id}", method = RequestMethod.DELETE)  //delete, get, patch, put
+    @RequestMapping(value = "/members/{id}", method = RequestMethod.DELETE)
     public Member deleteMember(@PathVariable("id") String memberId) {
 
         return members.deleteMember(memberId);

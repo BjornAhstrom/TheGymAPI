@@ -1,18 +1,21 @@
 package com.example.TheGym;
 
+
+import java.util.UUID;
+
 public class Member {
 
+    private String id;
     private String userName;
     private String firstName;
     private String lastName;
     private String adress;
     private String phoneNumber;
     private String mail;
-    private String id;
     private MemberShipLevel memberShipLevel;
 
     public Member() {
-
+        this.id = UUID.randomUUID().toString().replace("-", "");
     }
 
     public Member(String userName, String firstName, String lastName, String adress, String phoneNumber, String mail, String id, MemberShipLevel memberShipLevel) {
@@ -22,7 +25,7 @@ public class Member {
         this.adress = adress;
         this.phoneNumber = phoneNumber;
         this.mail = mail;
-        this.id = id;
+
         this.memberShipLevel = memberShipLevel;
     }
 
