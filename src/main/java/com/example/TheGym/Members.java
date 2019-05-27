@@ -11,11 +11,9 @@ import java.util.List;
 public class Members {
 
     GymInformation gymInfo = new GymInformation();
-    //MembersList gymInfo = new MembersList();
     ObjectMapper mapper = new ObjectMapper();
 
     public Members() {
-       // this.gymInfo.gymInfo = new ArrayList<>();
        readFromFile();
     }
 

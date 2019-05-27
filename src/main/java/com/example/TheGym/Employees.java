@@ -86,10 +86,4 @@ public class Employees {
             e.printStackTrace();
         }
     }
-
-//    private void addMockData() {
-//        Employee emp1 = new Employee("deah1802", "Dessi", "Åhström", "Backanäsgatan 1C", "0704306104", "dessi_17@hotmail.com", "dfsdFDF434FFd5334");
-//
-//        employees.employees.add(emp1);
-//    }
 }

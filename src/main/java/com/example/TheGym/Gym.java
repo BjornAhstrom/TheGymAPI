@@ -15,7 +15,6 @@ public class Gym {
     ObjectMapper mapper = new ObjectMapper();
 
     public Gym() {
-       //writeToFile();
         readFromFile();
     }
 

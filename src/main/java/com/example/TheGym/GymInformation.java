@@ -55,6 +55,7 @@ public class GymInformation {
         return closingHours;
     }
 
+
     public List<Member> getMembers() {
         if (members == null) {
             return new ArrayList<>();
@@ -89,6 +90,7 @@ public class GymInformation {
     public void setMembers(List<Member> members) {
         this.members = members;
     }
+
 
     public void patch(Map<String, String> updateGym) {
         updateGym.forEach((key, value) -> {

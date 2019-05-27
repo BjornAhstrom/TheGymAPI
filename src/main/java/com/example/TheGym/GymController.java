@@ -11,19 +11,12 @@ import java.util.Map;
 public class GymController {
 
     private Gym gym = new Gym();
-    //private  GymInformation gymInformation = new GymInformation();
 
     @RequestMapping(value = "/gym", method = RequestMethod.GET)
-    public GymInformation getGymInfo() {   //@RequestParam(value = "searchString", defaultValue = "") String searchString
+    public GymInformation getGymInfo() {
 
         return  gym.getGymInfo();
     }
-
-//    @RequestMapping(value = "/gym", method = RequestMethod.POST)
-//    public GymInformation postGymInfo(@RequestBody GymInformation gymInfo) {
-//        gym.addGym(gymInfo);
-//        return gymInfo;
-//    }
 
     @RequestMapping(value = "/gym", method = RequestMethod.PATCH)
     public GymInformation patchGymInformation(@RequestBody Map<String, String> updateGym) {
