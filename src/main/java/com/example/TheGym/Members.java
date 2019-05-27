@@ -86,15 +86,5 @@ public class Members {
             e.printStackTrace();
         }
     }
-
-//    private void addMockData() {
-//        MemberShipLevel memberShipLevel1 = new MemberShipLevel(true, false, false);
-//        Member person1 = new Member("bjah1801", "Björn", "Åhström", "Backanäsgatan 1C", "0736482006", "ahstrom_81@hotmail.com", "0", memberShipLevel1);
-//        MemberShipLevel memberShipLevel2 = new MemberShipLevel(false, true, false);
-//        Member person2 = new Member("deah1802", "Dessi", "Åhström", "Backanäsgatan 1C", "0704306104", "dessi_17@hotmail.com", "1", memberShipLevel2);
-//
-//        gymInfo.gymInfo.add(person1);
-//        gymInfo.gymInfo.add(person2);
-//    }
 }
 

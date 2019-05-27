@@ -1,30 +1,34 @@
 package com.example.TheGym;
 
+import org.springframework.util.ReflectionUtils;
+
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class GymInformation {
 
-    private String name;
-    private String adress;
-    private String phoneNumber;
-    private String mail;
-    private String openingHours;
-    private String closingHours;
+    public String name;
+    public String adress;
+    public String phoneNumber;
+    public String mail;
+    public String openingHours;
+    public String closingHours;
 
-    public List<Member> members = new ArrayList<>();
+    public List<Member> members;
 
     public GymInformation() {
     }
 
-    public GymInformation(String name, String adress, String phoneNumber, String mail, String openingHours, String closingHours) {
+    public GymInformation(String name, String adress, String phoneNumber, String mail, String openingHours, String closingHours, List<Member> members) {
         this.name = "";
         this.adress = "";
         this.phoneNumber = "";
         this.mail = "";
         this.openingHours = "";
         this.closingHours = "";
-        this.members = new ArrayList<>();
+        this.members = members;
     }
 
     public String getName() {
@@ -52,6 +56,9 @@ public class GymInformation {
     }
 
     public List<Member> getMembers() {
+        if (members == null) {
+            return new ArrayList<>();
+        }
         return members;
     }
 
@@ -82,4 +89,12 @@ public class GymInformation {
     public void setMembers(List<Member> members) {
         this.members = members;
     }
+
+    public void patch(Map<String, String> updateGym) {
+        updateGym.forEach((key, value) -> {
+            Field field = ReflectionUtils.findField(GymInformation.class, key);
+            ReflectionUtils.setField(field, this, value);
+        });
+    }
+
 }

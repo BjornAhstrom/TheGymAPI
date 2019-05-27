@@ -6,24 +6,58 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Map;
 
 public class Gym {
 
+    Members members = new Members();
     GymInformation gymInfo = new GymInformation();
     ObjectMapper mapper = new ObjectMapper();
 
     public Gym() {
+       //writeToFile();
         readFromFile();
     }
 
     public GymInformation getGymInfo() {
+
         return gymInfo;
     }
 
-    public void patchGymInfo(GymInformation gymInformation) {
-        //Optional<GymInformation> optGymInfo =
+    public GymInformation patchGymInfo(Map<String, String> updateGym) {
+//        updateGym.forEach((key, value) -> {
+//            switch (key) {
+//                case "name":
+//                    getGymInfo().setName(value);
+//                    writeToFile();
+//                    break;
+//                case "adress":
+//                    getGymInfo().setAdress(value);
+//                    writeToFile();
+//                    break;
+//                case "phoneNumber":
+//                    getGymInfo().setPhoneNumber(value);
+//                    writeToFile();
+//                    break;
+//                case "mail":
+//                    getGymInfo().setMail(value);
+//                    writeToFile();
+//                    break;
+//                case "openingHours":
+//                    getGymInfo().setOpeningHours(value);
+//                    writeToFile();
+//                    break;
+//                case "closingHours":
+//                    getGymInfo().setClosingHours(value);
+//                    writeToFile();
+//                    break;
+//            }
+//        });
 
+        gymInfo.patch(updateGym);
+        writeToFile();
 
+        return gymInfo;
     }
 
     private void writeToFile() {
@@ -37,11 +71,11 @@ public class Gym {
 
     private void readFromFile() {
         try {
-            String resourceMembers = "gymInfo.json";
-            InputStream fileStream = new FileInputStream(resourceMembers);
-            GymInformation membersList =  mapper.readValue(fileStream, GymInformation.class);
+            String resourcegymInfo = "gymInfo.json";
+            InputStream fileStream = new FileInputStream(resourcegymInfo);
+            GymInformation gymInformation =  mapper.readValue(fileStream, GymInformation.class);
 
-            gymInfo = membersList;
+            gymInfo = gymInformation;
         } catch (IOException e) {
             e.printStackTrace();
         }
